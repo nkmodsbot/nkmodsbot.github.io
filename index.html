@@ -1,0 +1,36 @@
+<html lang="en">
+<body  style="background-color: #101112;">
+<style>
+.themi{
+color:white;
+text-align: center;
+}
+.mid{
+text-align: center;
+}
+</style>
+<input class="mid" type="button" id="btnRedirect" value="TAP FOR HUMAN VERIFY" />
+<br />
+<br />
+<div class="themi" id="dvCountDown" style="display: none">
+Please wait <span id="lblCount"></span>&nbsp;seconds.
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(function () {
+    $("#btnRedirect").click(function () {
+        var seconds = 10;
+        $("#dvCountDown").show();
+        $("#btnRedirect").hide();
+        $("#lblCount").html(seconds);
+        setInterval(function () {
+            seconds--;
+            $("#lblCount").html(seconds);
+            if (seconds == 0) {
+                $("#dvCountDown").show();
+                window.location = "http://www.jqueryfaqs.com/";
+            }
+        }, 1000);
+    });
+});
+</script>
