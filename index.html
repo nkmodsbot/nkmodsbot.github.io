@@ -7,6 +7,17 @@
  .mid{
  text-align: center;
  }
+.alverified{
+font-size: 50px;
+color: white;
+}
+.txtofdid{
+font-size: 25px;
+color: white;
+}
+.urldid{
+color: blue;
+}
  .prebuttonv1 {
   background-color: #354bc4;
   border: none;
@@ -34,21 +45,34 @@ body {
  <div class="themi" id="dvCountDown" style = "display:none">
  Please Wait <span id = "lblCount"></span>&nbsp;seconds.
  </div>
+<div class="alverified" id="alreadyverifiedtxtnkmods" style = "display:none">
+ You Already Verified!</div>
+<div class="txtofdid" id="didnotgotourltxtnkmods" style = "display:none">
+ You Didn't Enter on Main Page?
+or Did not Verified? </div>
+ <a href="google.com" class="urldid" id="linkofurlnkmods" style = "display:none">
+ Click here.</a>
  <script type="text/javascript">
  function DelayRedirect() {
  var seconds = 10;
  var dvCountDown = document.getElementById("dvCountDown");
 var lblCount = document.getElementById("lblCount");
 var btnRedirect = document.getElementById("btnRedirect")
- dvCountDown.style.display = "block";
+var linkofurlnkmods = document.getElementById("linkofurlnkmods")
+var alreadyverifiedtxtnkmods = document.getElementById("alreadyverifiedtxtnkmods")
+var didnotgotourltxtnkmods = document.getElementById("didnotgotourltxtnkmods")
+dvCountDown.style.display = "block";
 btnRedirect.style.display = "none"
- lblCount.innerHTML = seconds;
+lblCount.innerHTML = seconds;
  setInterval(function () {
  seconds--;
  lblCount.innerHTML = seconds;
  if (seconds == 0) {
-lblCount.style.display = "none"
- window.location = "https://nkmodsbot.github.io/humanverified.html";
+dvCountDown.style.display = "none"
+alreadyverifiedtxtnkmods.style.display = "block"
+didnotgotourltxtnkmods.style.display = "block"
+linkofurlnkmods.style.display = "block"
+window.location = "humanverified.html";
  }
  }, 1000);
  }
